@@ -1,6 +1,6 @@
 package handler
 
-import "flexrea/pkg/model"
+import "github.com/shoukoo/csv-parser/pkg/model"
 
 type inputMock struct {
 }

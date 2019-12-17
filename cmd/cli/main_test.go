@@ -1,10 +1,11 @@
 package main
 
 import (
-	"flexrea/pkg/handler"
-	"flexrea/pkg/input/csv"
-	"flexrea/pkg/output/txt"
 	"testing"
+
+	"github.com/shoukoo/csv-parser/pkg/handler"
+	"github.com/shoukoo/csv-parser/pkg/input/csv"
+	"github.com/shoukoo/csv-parser/pkg/output/txt"
 )
 
 func BenchmarkSampleLargeFile(b *testing.B) {

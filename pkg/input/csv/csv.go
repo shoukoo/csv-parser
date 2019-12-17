@@ -3,10 +3,11 @@ package csv
 import (
 	"encoding/csv"
 	"errors"
-	"flexrea/pkg/model"
 	"io"
 	"log"
 	"os"
+
+	"github.com/shoukoo/csv-parser/pkg/model"
 )
 
 type csvInput struct {

@@ -1,10 +1,11 @@
 package handler
 
 import (
-	"flexrea/pkg/model"
-	"flexrea/pkg/output"
-	"flexrea/pkg/output/txt"
 	"testing"
+
+	"github.com/shoukoo/csv-parser/pkg/model"
+	"github.com/shoukoo/csv-parser/pkg/output"
+	"github.com/shoukoo/csv-parser/pkg/output/txt"
 
 	"github.com/google/go-cmp/cmp"
 )

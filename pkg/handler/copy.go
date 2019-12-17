@@ -1,10 +1,11 @@
 package handler
 
 import (
-	"flexrea/pkg/input"
-	"flexrea/pkg/model"
-	"flexrea/pkg/output"
 	"strings"
+
+	"github.com/shoukoo/csv-parser/pkg/input"
+	"github.com/shoukoo/csv-parser/pkg/model"
+	"github.com/shoukoo/csv-parser/pkg/output"
 )
 
 type Copy interface {

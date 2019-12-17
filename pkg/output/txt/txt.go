@@ -1,8 +1,9 @@
 package txt
 
 import (
-	"flexrea/pkg/model"
 	"strconv"
+
+	"github.com/shoukoo/csv-parser/pkg/model"
 )
 
 type txt struct {

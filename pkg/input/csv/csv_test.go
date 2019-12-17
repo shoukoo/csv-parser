@@ -1,8 +1,9 @@
 package csv
 
 import (
-	"flexrea/pkg/model"
 	"testing"
+
+	"github.com/shoukoo/csv-parser/pkg/model"
 
 	"github.com/google/go-cmp/cmp"
 )

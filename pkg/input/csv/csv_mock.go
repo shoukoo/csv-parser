@@ -1,6 +1,6 @@
 package csv
 
-import "flexrea/pkg/model"
+import "github.com/shoukoo/csv-parser/pkg/model"
 
 func getCSVMockSearchApp1() []model.Row {
 

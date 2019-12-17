@@ -1,4 +1,4 @@
-module flexrea
+module github.com/shoukoo/csv-parser
 
 go 1.12
 
