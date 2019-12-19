@@ -5,3 +5,6 @@ ComputerID,UserID,ApplicationID,ComputerType,Comment
 4,1030,3,desktop,Exported from System A
 5,1030,3,LAPTOP,Exported from System A
 5,1030,3,LAPTOP,Exported from System A
+6,1088,1,DESKTOP,Exported from System B
+7,1081,1,LAPTOP,Exported from System B
+8,1035,3,LAPTOP,Exported from System A

@@ -13,7 +13,7 @@ func TestRead(t *testing.T) {
 		desc        string
 		csvReader   *csvInput
 		searchValue string
-		expected    []model.Row
+		expected    map[string][]model.Row
 	}{
 		{
 			desc:        "return Rows when searching application id 1",

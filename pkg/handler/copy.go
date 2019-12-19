@@ -48,19 +48,47 @@ func (s *service) GetCopyCount() ([]byte, error) {
 }
 
 // calculateCopyCount calculate the minimum number of copies of the application the company must purchase
-func calculateCopyCount(rows []model.Row) (model.Result, error) {
-	var results model.Result
-	for _, row := range rows {
-		switch strings.ToLower(row.Type) {
-		case "desktop":
-			results.Desktop += 1
-		case "laptop":
-			results.Laptop += 1
+func calculateCopyCount(rows map[string][]model.Row) (model.Result, error) {
+
+	var total int
+	for _, rows := range rows {
+		co := model.Result{}
+
+		for _, r := range rows {
+			t := strings.ToLower(r.Type)
+			if t == "desktop" {
+				co.Desktop += 1
+			}
+
+			if t == "laptop" {
+				co.Laptop += 1
+			}
+		}
+
+		// Laptop has more than desktop
+		if co.Laptop > co.Desktop {
+			t := co.Laptop + co.Desktop
+			var leftover int
+			// Make it even number
+			if t%2 != 0 {
+				t = t - 1
+				leftover = 1
+			}
+
+			total = total + (t/2 + leftover)
+		}
+
+		// Laptop is the same quantity as desktop
+		if co.Laptop == co.Desktop {
+			total = total + co.Laptop
+		}
+
+		// Laptop is less than desktop
+		if co.Laptop < co.Desktop {
+			t := co.Laptop + co.Desktop
+			total = total + (t - co.Laptop)
 		}
 	}
 
-	total := (results.Desktop + results.Laptop) - results.Laptop
-	results.TotalCopy = total
-
-	return results, nil
+	return model.Result{TotalCopy: total}, nil
 }

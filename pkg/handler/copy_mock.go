@@ -5,37 +5,133 @@ import "github.com/shoukoo/csv-parser/pkg/model"
 type inputMock struct {
 }
 
-func (i *inputMock) Read(appId string) ([]model.Row, error) {
+func (i *inputMock) Read(appId string) (map[string][]model.Row, error) {
 
-	return []model.Row{
+	return map[string][]model.Row{
 
-		{
-			Id:            "11",
-			ApplicationId: "101",
-			UserId:        "41",
-			Type:          "Laptop",
-			Comment:       "Imported from system X",
+		"1091": []model.Row{
+			{
+				Id:            "15",
+				UserId:        "1091",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "1",
+				UserId:        "1091",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "2",
+				UserId:        "1091",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System B",
+			},
 		},
-		{
-			Id:            "12",
-			ApplicationId: "101",
-			UserId:        "24",
-			Type:          "Desktop",
-			Comment:       "Imported from system X",
+		"2003": []model.Row{
+			{
+				Id:            "15",
+				UserId:        "2003",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "2",
+				UserId:        "2003",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System B",
+			},
 		},
-		{
-			Id:            "13",
-			ApplicationId: "101",
-			UserId:        "24",
-			Type:          "Laptop",
-			Comment:       "Imported from system X",
+		"31": []model.Row{
+			{
+				Id:            "15",
+				UserId:        "31",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "1",
+				UserId:        "31",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "2",
+				UserId:        "31",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System B",
+			},
 		},
-		{
-			Id:            "14",
-			ApplicationId: "101",
-			UserId:        "12",
-			Type:          "Desktop",
-			Comment:       "Imported from system X",
+		"5": []model.Row{
+			{
+				Id:            "155",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "152",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "153",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "15",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "LAPTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "1",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System A",
+			},
+			{
+				Id:            "2",
+				UserId:        "5",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System B",
+			},
+		},
+		"2215": []model.Row{
+			{
+				Id:            "2",
+				UserId:        "2215",
+				ApplicationId: "1",
+				Type:          "DESKTOP",
+				Comment:       "Exported from System B",
+			},
+		},
+		"111": []model.Row{
+			{
+				Id:            "2",
+				UserId:        "111",
+				ApplicationId: "1",
+				Type:          "Laptop",
+				Comment:       "Exported from System B",
+			},
 		},
 	}, nil
 

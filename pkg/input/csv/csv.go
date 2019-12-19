@@ -21,7 +21,7 @@ func New(file string) *csvInput {
 }
 
 // Read reads the csv file and filter out the duplicate records afterward
-func (c *csvInput) Read(appId string) ([]model.Row, error) {
+func (c *csvInput) Read(appId string) (map[string][]model.Row, error) {
 	file, err := os.Open(c.file)
 	if err != nil {
 		log.Fatal(err)
@@ -55,15 +55,15 @@ func (c *csvInput) Read(appId string) ([]model.Row, error) {
 		}
 	}
 
-	var rows []model.Row
+	var count int
 	for _, v := range records {
-		rows = append(rows, v...)
+		count += len(v)
 	}
 
-	if len(rows) == 0 {
+	if count == 0 {
 		return nil, errors.New("No record found")
 	}
-	return rows, nil
+	return records, nil
 }
 
 // IsDuplicated returns true if user ID and app ID both appears in one of row in the rows array
